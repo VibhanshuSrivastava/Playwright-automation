@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 400px;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+.demo-credentials {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+.error-message {
+  margin: -5px 0 15px;
+  color: #c62828;
+  font-size: 14px;
+}
+
+.dashboard {
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+.dashboard-header {
+  height: 70px;
+  padding: 0 40px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dashboard-header .logo {
+  margin: 0;
+}
+
+.dashboard-header button {
+  width: auto;
+  padding: 9px 18px;
+  font-size: 14px;
+}
+
+.dashboard-content {
+  padding: 40px;
+}
+
+.dashboard-content h1 {
+  margin-bottom: 8px;
+}
+
+.dashboard-content > p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+}
+
+.dashboard-card {
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+.dashboard-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.dashboard-card p {
+  margin: 0;
+  color: #666;
+}
