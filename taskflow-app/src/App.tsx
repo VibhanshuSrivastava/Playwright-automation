@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import './App.css';
+import ProjectsPage from "./pages/ProjectsPage"
 
 function App() {
   const [email, setEmail] = useState('');
@@ -46,47 +47,9 @@ function App() {
 };
 
   if (isLoggedIn) {
-    return (
-      <div className="dashboard">
-        <header className="dashboard-header">
-          <div className="logo">TaskFlow</div>
-
-          <button
-            type="button"
-            onClick={() => setIsLoggedIn(false)}
-          >
-            Logout
-          </button>
-        </header>
-
-        <main className="dashboard-content">
-          <h1>Dashboard</h1>
-          <p>Welcome back, Admin.</p>
-
-          <div className="dashboard-grid">
-            <div className="dashboard-card">
-              <h2>Projects</h2>
-              <p>Manage your projects</p>
-            </div>
-
-            <div className="dashboard-card">
-              <h2>Tasks</h2>
-              <p>Track and manage tasks</p>
-            </div>
-
-            <div className="dashboard-card">
-              <h2>Users</h2>
-              <p>Manage workspace users</p>
-            </div>
-
-            <div className="dashboard-card">
-              <h2>Settings</h2>
-              <p>Configure your workspace</p>
-            </div>
-          </div>
-        </main>
-      </div>
-    );
+    if (isLoggedIn) {
+  return <ProjectsPage />;
+}
   }
 
   return (
