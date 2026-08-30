@@ -1,36 +1,37 @@
 {
-  "name": "taskflow-app",
+  "name": "taskflow-app-monorepo",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "dev:backend": "npm --prefix backend run dev",
-    "dev:frontend": "npm run dev",
-    "dev:test": "concurrently -k \"npm run dev:backend\" \"npm run dev:frontend\""
+  "version": "1.0.0",
+  "description": "TaskFlow: a React + Express task/project management demo app with a full Playwright end-to-end test suite (POM, API client, storage-state auth, visual regression).",
+  "license": "MIT",
+  "author": "",
+  "engines": {
+    "node": ">=22"
   },
-  "dependencies": {
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+  "workspaces": [
+    "app",
+    "app/backend",
+    "playwright"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "dev": "npm run dev --prefix app",
+    "dev:backend": "npm run dev --prefix app/backend",
+    "dev:frontend": "npm run dev --prefix app",
+    "dev:test": "npm run dev:test --prefix app",
+    "build": "npm run build --prefix app",
+    "lint": "npm run lint --prefix app && npm run lint --prefix playwright",
+    "typecheck": "npm run typecheck --prefix app && npm run typecheck --prefix app/backend && npm run typecheck --prefix playwright",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run test --prefix playwright",
+    "test:headed": "npm run test:headed --prefix playwright",
+    "test:headless": "npm run test:headless --prefix playwright",
+    "test:ui": "npm run test:ui --prefix playwright",
+    "test:report": "npm run report --prefix playwright"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@playwright/test": "^1.62.1",
-    "@types/node": "^24.13.3",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "@vitejs/plugin-react": "^6.1.0",
-    "concurrently": "^10.0.5",
-    "eslint": "^10.9.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.4",
-    "globals": "^17.11.0",
-    "typescript": "~6.0.2",
-    "typescript-eslint": "^8.67.0",
-    "vite": "^8.2.2",
-    "wait-on": "^9.1.0"
+    "husky": "^9.1.7",
+    "prettier": "^3.9.6"
   }
 }

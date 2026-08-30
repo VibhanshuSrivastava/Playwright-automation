@@ -1,0 +1,33 @@
+{
+  "name": "taskflow-playwright",
+  "private": true,
+  "version": "1.0.0",
+  "description": "End-to-end test suite for TaskFlow — Playwright, Page Object Model, API client, storage-state auth, visual regression",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:headless": "playwright test",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^24.13.3",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.9.0",
+    "eslint-plugin-playwright": "^2.11.0",
+    "globals": "^17.11.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.67.0",
+    "wait-on": "^9.1.0"
+  }
+}
